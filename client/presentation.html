@@ -1,0 +1,14 @@
+
+<template name="Presentation">
+  {{> runHooks 'presentation.before'}}
+  {{#presentation}}
+  {{#each steps}}
+  {{#slide id=id x=x y=y z=z r=r phi=phi scale=scale scaleX=scaleX scaleY=scaleY scaleZ=scaleZ rotate=rotate rotateX=rotateX rotateY=rotateY rotateZ=rotateZ delegate=delegate src=src exclude=exclude next=next prev=prev template=template jmpress=jmpress style=style}}
+  {{#markdown}}{{md}}{{/markdown}}
+  {{/slide}}
+  {{/each}}
+  {{/presentation}}
+  {{> Template.dynamic template=action data=context}}
+</template>
+
+
