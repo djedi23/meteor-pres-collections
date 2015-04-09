@@ -14,15 +14,15 @@ Package.onUse(function(api) {
     api.versionsFrom('1.0.3.2');
 
     api.use(['mongo',
-        'alanning:roles',
-        'matb33:collection-hooks',
-        'djedi:modules'],
+        'alanning:roles@1.2.13',
+        'matb33:collection-hooks@0.7.11',
+        'djedi:modules@0.1.0'],
         ['client', 'server']);
     api.use(['templating', 'jquery',
-        'djedi:pres-jmpress',
+        'djedi:pres-jmpress@0.0.1',
 	'session',
         'tracker',
-        'perak:markdown'],
+        'perak:markdown@1.0.4'],
         ['client']);
 
     api.addFiles('collections/presentation.js', ['client', 'server']);
@@ -34,6 +34,6 @@ Package.onUse(function(api) {
 
 Package.onTest(function(api) {
     api.use('tinytest');
-    api.use('pres-collections');
+    api.use('djedi:pres-collections');
     api.addFiles('pres-collections-tests.js');
 });
